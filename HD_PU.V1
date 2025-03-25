@@ -1,27 +1,101 @@
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
-local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
---------------------------------------------------------------------------------------------------------------------------------------------
-local Window = Fluent:CreateWindow({
-    --ai skid thì nhớ đổi tên =)
-    --táo hub , aniee hub :>
-    Title = " delta x",
-    SubTitle = "Version 2",
-    TabWidth = 160,
-    Size = UDim2.fromOffset(530, 350),
-    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Darker",
-    MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
+local UiMakeLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Msunehub/Uilm/refs/heads/main/UiMat1.lua"))()
+local Notify = UiMakeLib:MakeNotify({
+	["Title"] = "tĂªn Hub",
+	["Description"] = "Notification",
+	["Color"] = Color3.fromRGB(151, 207, 23),
+	["Content"] = "Welcome to Fluriore UI",
+	["Time"] = 1,
+	["Delay"] = 10
 })
-local Tabs = {
-    Main = Window:AddTab({ Title = "Main Farm", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting Farming", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Travel", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Buy Items", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "Miscellaneous", Icon = "list-plus" }),
-    Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
+local Window = UiMakeLib:MakeGui({
+	["NameHub"] = "Đức hub | [Blox Fruits]",
+	["Description"] = "PhiĂªn Báº£n V1 Ä‘á»i Ä‘áº§u",
+	["Color"] = Color3.fromRGB(151, 207, 23),
+	["Logo Player"] = "https://www.roblox.com/asset/?id=71164747078780", headshot-thumbnail/image?userId="..game:GetService("Players").LocalPlayer.UserId .."&width=420&height=420&format=png",
+	["Name Player"] = tostring(game:GetService("Players").LocalPlayer.Name),
+	["Tab Width"] = 140
+})
+local Tab1 = Window:CreateTab({
+	["Name"] = "Hack ChĂ­nh",
+	["Icon"] = "rbxassetid://7733960981"
+})
+local Tab2 = Window:CreateTab({
+	["Name"] = "CĂ i Ä‘áº·t",
+	["Icon"] = "rbxassetid://7734053495"
+})
+local Section = Tab1:AddSection("Má»Ÿ CĂ¡c Loáº¡i Hack")
+local Paragraph = Section:AddParagraph({
+	["Title"] = "Paragraph",
+	["Content"] = "This is a Paragraph"
+})
+Paragraph:Set({
+	["Title"] = "Paragraph",
+	["Content"] = "This is a Paragraph"
+})
+local Toggle = Section:AddToggle({
+	["Title"]= "Toggle",
+	["Content"] = "This is a Toggle",
+	["Default"] = false,
+	["Multi"] = true,
+	["Options"] = {"Option 1", "Option 2"},
+	["Selecting"] = {"Option 1"},
+	["Callback"] = function(Value) 
+		print(Value)
+	end
+})
+Toggle:Set(false)
+print(Toggle.Value)
+local Button = Section:AddButton({
+	["Title"] = "Menu Gangten Hub",
+	["Content"] = "Há»— trá»£ mĂ¡y yáº¿u",
+	["Icon"] = "rbxassetid://16932740082",
+	["Callback"] = function()
+	 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a5c3af437cd698d64379cf75cacb9281.lua"))()
+	end
+})
+local Button = Section:AddButton({
+	["Title"] = "Fix lag",
+	["Content"] = "Há»— trá»£ mĂ¡y yáº¿u",
+	["Icon"] = "rbxassetid://16932740082",
+	["Callback"] = function()
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
+	end
+})
+local Slider = Section:AddSlider({
+	["Title"] = "Slider",
+	["Content"] = "This is a Slider",
+	["Min"] = 0,
+	["Max"] = 100,
+	["Increment"] = 1,
+	["Default"] = 30,
+	["Callback"] = function(Value) 
+		print(Value)
+	end
+})
+Slider:Set(30)
+print(Slider.Value)
+local Input = Section:AddInput({
+	["Title"] = "Input",
+	["Content"] = "This is a Input",
+	["Callback"] = function(Value) 
+		print(Value)
+	end
+})
+Input:Set("Input TextBox")
+print(Input.Value)
+local Dropdown = Section:AddDropdown({
+	["Title"] = "Dropdown",
+	["Content"] = "This is a Dropdown",
+	["Multi"] = false,
+	["Options"] = {"Option 1", "Option 2"},
+	["Default"] = {"Option 1"},
+	["Callback"] = function(Value)
+		print(Value)
+	end
+})
+Dropdown:Set({"Option 1"})
+Dropdown:AddOption("Option 3")
+Dropdown:Clear()
+Dropdown:Refresh({"Option 1", "Option 2"}, {"Option 1"})
+print(Dropdown.Value)
+print(Dropdown.Options)
