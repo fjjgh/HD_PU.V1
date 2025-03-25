@@ -1,6 +1,6 @@
 local UiMakeLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Msunehub/Uilm/refs/heads/main/UiMat1.lua"))()
 local Notify = UiMakeLib:MakeNotify({
-	["Title"] = "tĂªn Hub",
+	["Title"] = "tên Hub",
 	["Description"] = "Notification",
 	["Color"] = Color3.fromRGB(151, 207, 23),
 	["Content"] = "Welcome to Fluriore UI",
@@ -8,22 +8,22 @@ local Notify = UiMakeLib:MakeNotify({
 	["Delay"] = 10
 })
 local Window = UiMakeLib:MakeGui({
-	["NameHub"] = "Đức hub | [Blox Fruits]",
-	["Description"] = "PhiĂªn Báº£n V1 Ä‘á»i Ä‘áº§u",
+	["NameHub"] = "RAZMOD",
+	["Description"] = "Phiên Bản V1 đời đầu",
 	["Color"] = Color3.fromRGB(151, 207, 23),
-	["Logo Player"] = "https://www.roblox.com/eadshot-thumbnail/image?userId="..game:GetService("Players").LocalPlayer.UserId .."&width=420&height=420&format=png",
+	["Logo Player"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game:GetService("Players").LocalPlayer.UserId .."&width=420&height=420&format=png",
 	["Name Player"] = tostring(game:GetService("Players").LocalPlayer.Name),
 	["Tab Width"] = 140
 })
 local Tab1 = Window:CreateTab({
-	["Name"] = "Hack ChĂ­nh",
+	["Name"] = "Hack Chính",
 	["Icon"] = "rbxassetid://7733960981"
 })
 local Tab2 = Window:CreateTab({
-	["Name"] = "CĂ i Ä‘áº·t",
+	["Name"] = "Cài đặt",
 	["Icon"] = "rbxassetid://7734053495"
 })
-local Section = Tab1:AddSection("Má»Ÿ CĂ¡c Loáº¡i Hack")
+local Section = Tab1:AddSection("Mở Các Loại Hack")
 local Paragraph = Section:AddParagraph({
 	["Title"] = "Paragraph",
 	["Content"] = "This is a Paragraph"
@@ -47,7 +47,7 @@ Toggle:Set(false)
 print(Toggle.Value)
 local Button = Section:AddButton({
 	["Title"] = "Menu Gangten Hub",
-	["Content"] = "Há»— trá»£ mĂ¡y yáº¿u",
+	["Content"] = "Hỗ trợ máy yếu",
 	["Icon"] = "rbxassetid://16932740082",
 	["Callback"] = function()
 	 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a5c3af437cd698d64379cf75cacb9281.lua"))()
@@ -55,7 +55,7 @@ local Button = Section:AddButton({
 })
 local Button = Section:AddButton({
 	["Title"] = "Fix lag",
-	["Content"] = "Há»— trá»£ mĂ¡y yáº¿u",
+	["Content"] = "Hỗ trợ máy yếu",
 	["Icon"] = "rbxassetid://16932740082",
 	["Callback"] = function()
 	  loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/main/FixLag.lua"))()
@@ -99,3 +99,4 @@ Dropdown:Clear()
 Dropdown:Refresh({"Option 1", "Option 2"}, {"Option 1"})
 print(Dropdown.Value)
 print(Dropdown.Options)
+
