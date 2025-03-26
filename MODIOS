@@ -1,4 +1,3 @@
-*
 local ScriptHub = Window:MakeTab({
 	Name = "Trusted Scripts",
 --	Icon = "rbxassetid://4483345998",
